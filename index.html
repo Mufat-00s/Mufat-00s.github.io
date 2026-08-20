@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timur Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="screen">
+        <div class = "crt-container">
+         <div class="background-animation"></div>
+            <canvas id="dispmap" width="256" height="256" style="display:none;"></canvas>
+                <svg style="position:absolute; width:0; height:0;">
+                <filter id="crt-bulge" x="-10%" y="-10%" width="120%" height="120%">
+                    <feImage id="dispImage" result="displacementMap" preserveAspectRatio="none"
+                    x="0" y="0" width="100%" height="100%" />
+                    <feDisplacementMap in="SourceGraphic" in2="displacementMap"
+                    scale="70" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+                </svg>
+        </div>
+        
+        <!-- Back Button -->
+        <button id="back-btn" class="back-btn hidden" aria-label="Go Back to Menu">
+            <span class="back-btn__led"></span>
+            <span class="back-btn__text"> RETURN TO TERMINAL</span>
+        </button>
+
+        <!-- Page 1: Main Menu -->
+        <div id="main-menu" class="page-view main-menu">
+            <div class="fallout-container">
+                <div class="fallout-header">
+                    <div class="fallout-header__title">WELCOME TO <span class="glitch-name">TIMUR MUKMINOV'S</span> PORTFOLIO </div>
+                    <div class="fallout-header__status">ATTEMPTS REMAINING: &#9608; &#9608; &#9608; &#9608;</div>
+                </div>
+
+                <div class="fallout-body">
+                    <!-- Left Column -->
+                    <div class="fallout-column fallout-column--left">
+                        <div class="fallout-section-title">> MEMORY DUMP (0xF7D0 - 0xF9C4)</div>
+                        <div id="fallout-memory" class="fallout-memory"></div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="fallout-column fallout-column--right">
+                        <div class="fallout-instruction">SELECT ROUTE TO INITIALIZE MODULE:</div>
+                        <div class="fallout-menu-panel">
+                            <nav class="main-menu__nav fallout-nav">
+                                <button class="main-menu__item fallout-menu-row" data-page="about">
+                                    <span class="status-led status-led--green" title="STATUS: ONLINE"></span>
+                                    <span class="main-menu__index">[ 01 ]</span>
+                                    <span class="main-menu__text">> ABOUT ME</span>
+                                    <span class="main-menu__arrow">&rarr;</span>
+                                </button>
+                                <button class="main-menu__item fallout-menu-row" data-page="projects">
+                                    <span class="status-led status-led--green" title="STATUS: READY"></span>
+                                    <span class="main-menu__index">[ 02 ]</span>
+                                    <span class="main-menu__text">> PROJECTS</span>
+                                    <span class="main-menu__arrow">&rarr;</span>
+                                </button>
+                                <button class="main-menu__item fallout-menu-row" data-page="future">
+                                    <span class="status-led status-led--red" title="STATUS: LOCKED"></span>
+                                    <span class="main-menu__index">[ 03 ]</span>
+                                    <span class="main-menu__text">> FUTURE ITEM</span>
+                                    <span class="main-menu__arrow">&rarr;</span>
+                                </button>
+                            </nav>
+                        </div>
+
+                        <div class="fallout-sysinfo" id="fallout-sysinfo">
+                            <div class="fallout-sysinfo__line">SYSTEM_ID: ROBCO-V4.02</div>
+                            <div class="fallout-sysinfo__line">SECURITY: CLEARANCE LEVEL 5</div>
+                            <div class="fallout-sysinfo__line">USER: GUEST_EXPLORER</div>
+                            <div class="fallout-sysinfo__prompt">> <span class="blinking-cursor">&#9608;</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 2: About Me -->
+        <div id="about-page" class="page-view content-page hidden">
+            <div class="content-panel">
+                <div class="panel-left-track">
+                    <div class="hover-glow-line"></div>
+                </div>
+                <h2 class="content-title">ABOUT ME</h2>
+
+                <div class="content-body">
+                    <p class="lead-text">
+                        I am a software engineer with a strong interest in systems programming,
+                        computer graphics, artificial intelligence, distributed systems, embedded
+                        software, and cybersecurity. I enjoy building complex systems from the
+                        ground up and exploring how software interacts with hardware, networks,
+                        and intelligent systems.
+                    </p>
+
+                    <div class="content-section">
+                        <h3>BACKGROUND & INTERESTS</h3>
+                        <p>
+                            My projects span a wide range of areas, including automated program
+                            synthesis, real-time graphics and physics simulation, microservices,
+                            event-driven architectures, autonomous robotics, embedded drone
+                            control, and AI-powered cybersecurity systems. I am particularly
+                            interested in challenging problems that require a combination of
+                            algorithmic thinking, low-level engineering, and system design.
+                        </p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>CORE TECHNICAL FOCUS</h3>
+
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <h4>Systems & Software Engineering</h4>
+                                <p>
+                                    C, C++, Rust, Java, Python, Algorithms, System Design,
+                                    Performance Optimization
+                                </p>
+                            </div>
+
+                            <div class="content-card">
+                                <h4>Graphics & Simulation</h4>
+                                <p>
+                                    OpenGL, Ray Tracing, Rasterization, GPU Programming,
+                                    Physics Simulation, BVH Optimization
+                                </p>
+                            </div>
+
+                            <div class="content-card">
+                                <h4>Embedded & Autonomous Systems</h4>
+                                <p>
+                                    Microcontrollers, Sensor Fusion, Control Systems,
+                                    Robotics, Bluetooth Communication, Real-Time Systems
+                                </p>
+                            </div>
+
+                            <div class="content-card">
+                                <h4>Distributed & Event-Driven Systems</h4>
+                                <p>
+                                    Java, Spring Boot, Microservices, MQTT, WebSockets,
+                                    Docker, Asynchronous Communication
+                                </p>
+                            </div>
+
+                            <div class="content-card">
+                                <h4>AI & Automated Reasoning</h4>
+                                <p>
+                                    Program Synthesis, Automated Reasoning, Machine Learning,
+                                    LLM Integration, Intelligent Systems
+                                </p>
+                            </div>
+
+                            <div class="content-card">
+                                <h4>Cybersecurity & Deception</h4>
+                                <p>
+                                    SSH Honeypots, Docker Isolation, Threat Intelligence,
+                                    Telemetry Collection, Persistent Interactive Systems
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>APPROACH</h3>
+                        <p>
+                            I enjoy understanding systems beyond their surface level — from
+                            rendering pipelines and control loops to distributed communication
+                            and intelligent software behavior. My approach combines practical
+                            experimentation with strong attention to architecture, performance,
+                            reliability, and maintainable design.
+                        </p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>WHAT I ENJOY BUILDING</h3>
+                        <p>
+                            I am most motivated by projects that involve difficult technical
+                            challenges and require building something from first principles.
+                            Whether it is a graphics engine, an autonomous robot, a distributed
+                            backend, or an AI-powered cybersecurity environment, I enjoy turning
+                            complex ideas into working systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3: Projects Page -->
+        <div id="projects-page" class="page-view projects-view hidden">
+            <div class="horiz-scroll-container" id="track"></div>
+            <div class="deck-container" id="deck"></div>
+
+            <div id="project-panel">
+                <button class="detail__close" aria-label="Close project panel">&times;</button>
+
+                <div class="detail__container">
+                    <div class="detail__media">
+                        <img class="detail__img" src="" alt="Project Preview" />
+                    </div>
+                    <div class="detail__info">
+                    <h2 class="detail__title">Project Title</h2>
+                    <p class="detail__short-desc">Short tagline or quick summary goes here.</p>
+
+                    <div class="detail__section">
+                        <h3>About</h3>
+                        <p class="detail__desc">Full project description text...</p>
+                    </div>
+
+                    <div class="detail__section">
+                        <h3>Technologies</h3>
+                        <div class="detail__skills">
+                        </div>
+                    </div>
+
+                    <div class="detail__actions">
+                        <a class="detail__link" href="#" target="_blank" rel="noopener">
+                        View Repository
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills UI -->
+            <div id="skills-panel" class="skills-panel">
+                <button class="skill-btn" data-filter="all">All CS Skills</button>
+
+                <button class="skill-btn" data-filter="c++">C/C++</button>
+                <button class="skill-btn" data-filter="rust">Rust</button>
+                <button class="skill-btn" data-filter="java">Java</button>
+                <button class="skill-btn" data-filter="python">Python</button>
+
+                <button class="skill-btn" data-filter="algorithms">Algorithms</button>
+                <button class="skill-btn" data-filter="ai">AI</button>
+
+                <button class="skill-btn" data-filter="embedded">Embedded Systems</button>
+                <button class="skill-btn" data-filter="robotics">Robotics</button>
+
+                <button class="skill-btn" data-filter="computer-graphics">Computer Graphics</button>
+
+                <button class="skill-btn" data-filter="docker">Docker</button>
+
+                <button class="skill-btn" data-filter="cybersecurity">Cybersecurity</button>
+            </div>
+
+            <div id="scroll-to-skills">
+                <div id="scroll-text">S K I L L S</div>
+                <div class="arrow-svg">
+                    <svg width="100" height="25">
+                        <line x1="0" y1="0" x2="50" y2="15" stroke="#33ff66" stroke-width="2"></line>
+                        <line x1="50" y1="15" x2="100" y2="0" stroke="#33ff66" stroke-width="2"></line>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 4: Future Item Page -->
+        <div id="future-page" class="page-view content-page hidden">
+            <div class="content-panel">
+                <div class="panel-left-track">
+                    <div class="hover-glow-line"></div>
+                </div>
+                <h2 class="content-title">FUTURE ITEM</h2>
+                <div class="content-body">
+                    <p class="lead-text">[ EXPERIMENTAL LAB & UPCOMING MODULES ]</p>
+                    <div class="content-section">
+                        <h3>SYSTEM STATUS: UNDER DEVELOPMENT</h3>
+                        <p>This module is currently reserved for future projects, interactive demonstrations, research publications, or contact terminals.</p>
+                    </div>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span>STATUS: AWAITING DEPLOYMENT...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timur Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="screen">
+        <div class = "background-animation"></div>
+        <div class = "horiz-scroll-container" id="horiz-scroll-container"></div>
+        <div class="deck-container" id="deck-container"></div>
+        <div id="skills-panel" class="skills-panel"></div>
+        <div id="scroll-to-skills">
+            <div id="scroll-text">S K I L L S</div>
+            <div class = "arrow-svg" id="arrow-scroll-down-svg">
+                <svg width="100" height="25">
+                    <line x1="0" y1="0" x2="50" y2="15" stroke="white" stroke-width="2"></line>
+                    <line x1="50" y1="15" x2="100" y2="0" stroke="white" stroke-width="2"></line>
+                </svg>
+            </div>
+        </div>
+        <main></main>
+    </div>
+
+
+   <script src="scripts.js"></script>
+</body>
+</html> -->
